@@ -25,8 +25,8 @@ const TodoList = () => {
     localStorage.setItem('listItem', JSON.stringify(state))
   }
 
-  const handleDelete = (name) =>{
-    dispath(deleteTodo(name))
+  const handleDelete = (id) =>{
+    dispath(deleteTodo(id))
   }
 
   return (
@@ -38,7 +38,7 @@ const TodoList = () => {
         </div>
         {todoList.map(todo => <Box>
           <Todo key={todo.id} title={todo.name}/>
-          <FontAwesomeIcon className='cursor-pointer' icon={faX} onClick={() => handleDelete(todo.name)}/>
+          <FontAwesomeIcon className='cursor-pointer' icon={faX} onClick={() => handleDelete(todo.id)}/>
         </Box>)}
 
     </div>

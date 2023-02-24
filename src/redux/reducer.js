@@ -4,6 +4,7 @@ const initValue = {
 
 const rootReducer = (state = initValue, action) =>{
     switch (action.type) {
+        //Thêm todolist
         case 'todoList/addTodo':
             return {
                 ...state,
@@ -12,10 +13,11 @@ const rootReducer = (state = initValue, action) =>{
                     action.payload,
                 ]
             }
+        //Xóa todo
         case 'todoList/deleteTodo':
             return {
                 ...state,
-                todoList: state.todoList.filter(x => x.name !== action.payload)
+                todoList: state.todoList.filter(x => x.id !== action.payload)
             }
         default:
             return state;

@@ -5,10 +5,10 @@ export const addTodo = (data) => {
     }
 } 
 
-export const deleteTodo = (name) => {
+export const deleteTodo = (id) => {
     return {
         type: 'todoList/deleteTodo',
-        payload: name,
+        payload: id,
     }
 } 
 
